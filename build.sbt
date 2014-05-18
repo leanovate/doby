@@ -8,7 +8,7 @@ scalaVersion := "2.11.0"
 
 lazy val code = project.in(file("project-code"))
   .settings(scalaVersion := "2.11.0")
-  .settings(libraryDependencies += "org.scala-lang" % "scala-compiler" % scalaVersion.value)
+  .settings(libraryDependencies += "org.scala-lang" % "scala-reflect" % scalaVersion.value)
 
 lazy val sample = project.in(file("sample"))
   .settings(scalaVersion := "2.11.0")
