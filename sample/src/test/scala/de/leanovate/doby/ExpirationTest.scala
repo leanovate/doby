@@ -13,4 +13,18 @@ class ExpirationTest extends FunSuite {
     assertTypeError("""expire("2001-05-03")""")
   }
 
+  test("a not expired TODO should compile") {
+    TODO("YaSi", "use other date formats", "3014-05-03")
+  }
+
+  test("an expired TODO should compile") {
+    assertTypeError(
+      """ TODO("YaSi", "use other date formats", "2001-05-03") """)
+  }
+
+  test("an expired TODO can use the date format yyyy/MM/dd") {
+    assertTypeError(
+      """ TODO("YaSi", "use other date formats", "2001/05/03") """)
+  }
+
 }
