@@ -1,12 +1,12 @@
 name := "doby"
 
-version := "0.0.1-SNAPSHOT"
-
-organization := "de.leanovate.doby"
-
 scalaVersion := "2.11.0"
 
 lazy val code = project.in(file("project-code"))
+  .settings(
+    name := "doby",
+    organization := "de.leanovate.doby"
+  )
   .settings(scalaVersion := "2.11.0")
   .settings(libraryDependencies += "org.scala-lang" % "scala-reflect" % scalaVersion.value)
 
