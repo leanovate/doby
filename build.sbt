@@ -2,6 +2,8 @@ name := "doby"
 
 scalaVersion := "2.11.0"
 
+Release.settings
+
 lazy val code = project.in(file("project-code"))
   .settings(
     name := "doby",
