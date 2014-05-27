@@ -18,15 +18,6 @@ TODO("YaSi", "do not write any TODO anymore", "2011/05/25")
 ```
 does not compile.
 
-## usage
-
-To use this library, add it as dependency.
-
-```scala
-libraryDependencies += "de.leanovate" % "doby" % "0.3.0"
-```
-DoBy is only compatible with Scala 2.11.
-
 
 ## Description
 
@@ -36,7 +27,7 @@ Developers like to write TODOs in the code to describe a possible amelioration:
 // TODO: check the mime-type
 ```
 
-As the project evolves, the number of TODOs typically grows up.
+As the project evolves, the number of TODOs typically grows up and nobody take care of them seriously.
 
 With DoBy, a TODO must have an expiration date.
 
@@ -44,7 +35,32 @@ Before this date, the program compiles and runs as usual.
 
 After this date, the program does not compile anymore. You **must** do something about this TODO.
 
+
+## Usage
+
+### Add DoBy as dependency
+
+To use this library, add it as dependency.
+
+```scala
+libraryDependencies += "de.leanovate" % "doby" % "0.3.0"
+```
+DoBy is only compatible with Scala 2.11.
+
+### Add an import
+
+```scala
+import de.leanovate.doby.Expiration._
+```
+
+### Write your TODO
+
+```scala
+TODO("YaSi", "do not write any TODO anymore", "2011/05/25")
+```
+
 [Example](sample/src/test/scala/de/leanovate/doby/ExpirationApp.scala)
+
 
 ## FAQ
 
