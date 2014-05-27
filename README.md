@@ -25,6 +25,7 @@ To use this library, add it as dependency.
 ```scala
 libraryDependencies += "de.leanovate" % "doby" % "0.3.0"
 ```
+DoBy is only compatible with Scala 2.11.
 
 
 ### the current problem
@@ -64,7 +65,7 @@ That's why DoBy operates at compile time rather that at runtime.
 
 
 ## Credits
-[do_by: Automatically expiring TODO notes in Ruby](https://github.com/andyw8/do_by)
+- [do_by: Automatically expiring TODO notes in Ruby](https://github.com/andyw8/do_by)
 
-[Idea from @brikis98 to implement expiring TODOs with scala macros](https://twitter.com/brikis98/status/467924891837030400): "TODO's that throw exceptions when they expire. Neat, but I want compile, not runtime errors. Doable w/ scala macros?"
+- [Idea from @brikis98 to implement expiring TODOs with scala macros](https://twitter.com/brikis98/status/467924891837030400): "TODO's that throw exceptions when they expire. Neat, but I want compile, not runtime errors. Doable w/ scala macros?"
 
