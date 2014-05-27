@@ -1,7 +1,7 @@
 package de.leanovate.doby
 
 import java.text.SimpleDateFormat
-import java.util.Date
+import java.util.{Calendar, Date}
 import scala.reflect.macros.blackbox.Context
 import scala.util.Try
 
@@ -48,8 +48,10 @@ object Expiration {
 
     expireError(c)(byDate, s"TODO from '$authorValue': '$descriptionValue' has expired")
 
-    val threeWeeksBefore = 3 * 7 * 24 * 60 * 60 * 60 * 1000
-    val warningDate = new Date(byDate.getTime - threeWeeksBefore)
+    val cal = Calendar.getInstance()
+    cal.setTime(byDate)
+    cal.add(Calendar.WEEK_OF_YEAR, -3)
+    val warningDate = cal.getTime
 
     expireWarning(c)(warningDate, s"TODO from '$authorValue': '$descriptionValue' will expired")
 

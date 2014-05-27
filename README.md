@@ -29,11 +29,13 @@ Developers like to write TODOs in the code to describe a possible amelioration:
 
 As the project evolves, the number of TODOs typically grows up and nobody take care of them seriously.
 
-With DoBy, a TODO must have an expiration date.
+With DoBy, a TODO must have an expiration date:
 
-Before this date, the program compiles and runs as usual.
+- Before this date, the program compiles and runs as usual.
 
-After this date, the program does not compile anymore. You **must** do something about this TODO.
+- Three weeks before this date, the compiler will emit a warning about the note.
+
+- After this date, the program does not compile anymore. You **must** do something about this TODO.
 
 
 ## Usage
@@ -54,6 +56,10 @@ import de.leanovate.doby.Expiration._
 ```
 
 ### Write your TODO
+
+A TODO note must indicate the author, a description and an expiration date.
+
+The expiration date can be written like `2011/05/25` or like `2011-05-25`
 
 ```scala
 TODO("YaSi", "do not write any TODO anymore", "2011/05/25")

@@ -1,6 +1,6 @@
 package de.leanovate.doby
 
-import Expiration._
+import de.leanovate.doby.Expiration._
 
 class ExpirationApp extends App {
 
@@ -20,8 +20,8 @@ class ExpirationApp extends App {
 
   // compilation warning
   // [warn] [...]/doby/sample/src/test/scala/de/leanovate/doby/ExpirationApp.scala:22: TODO from 'YaSi': 'change this date to be only a warning' will expired
-  // [warn]   TODO("YaSi", "change this date to be only a warning", "2014/05/31")
+  // [warn]   TODO("YaSi", "change this date to be only a warning", "2014/06/17")
   // [warn]       ^
-  TODO("YaSi", "change this date to be only a warning", "2014/05/31")
+  TODO("YaSi", "change this date to be only a warning", "2014/06/17")
 
 }
