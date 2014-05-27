@@ -28,7 +28,7 @@ libraryDependencies += "de.leanovate" % "doby" % "0.3.0"
 DoBy is only compatible with Scala 2.11.
 
 
-### the current problem
+## Description
 
 Developers like to write TODOs in the code to describe a possible amelioration:
 
