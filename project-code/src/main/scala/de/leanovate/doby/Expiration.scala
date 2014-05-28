@@ -10,11 +10,34 @@ object Expiration {
 
   import scala.language.experimental.macros
 
+  /**
+   * define an expiration unit
+   * @param on expiration date
+   */
   def expire(on: String): Unit = macro expire_on_impl
 
+  /**
+   * define an expiration unit
+   * @param on expiration date
+   * @param warningDate output a compilation warning after this date
+   */
   def expire(on: String, warningDate: String): Unit = macro expire_on_and_warn_impl
 
+  /**
+   * define a TODO note
+   * @param author author of the note
+   * @param description description of the node
+   * @param by expiration date
+   */
   def TODO(author: String, description: String, by: String): Unit = macro todo_impl
+
+  /**
+   * define a FIXME note
+   * @param author author of the note
+   * @param description description of the node
+   * @param by expiration date
+   */
+  def FIXME(author: String, description: String, by: String): Unit = macro todo_impl
 
   def expire_on_impl(c: Context)(on: c.Expr[String]): c.Tree = {
 
