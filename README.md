@@ -42,10 +42,10 @@ With DoBy, a TODO must have an expiration date:
 
 ### Add DoBy as dependency
 
-To use this library, add it as dependency.
+To use this library, add it as [dependency](http://search.maven.org/#search%7Cga%7C1%7Ca%3A%22doby_2.11%22).
 
 ```scala
-libraryDependencies += "de.leanovate" % "doby" % "0.3.0"
+libraryDependencies += "de.leanovate" % "doby" % "0.0.4"
 ```
 DoBy is only compatible with Scala 2.11.
 
@@ -65,7 +65,7 @@ The expiration date can be written like `2011/05/25` or like `2011-05-25`
 TODO("YaSi", "do not write any TODO anymore", "2011/05/25")
 ```
 
-[Example](sample/src/test/scala/de/leanovate/doby/ExpirationApp.scala)
+You can also use the general expire. For info, see the [example](sample/src/test/scala/de/leanovate/doby/ExpirationApp.scala)
 
 
 ## FAQ
