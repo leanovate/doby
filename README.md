@@ -45,7 +45,7 @@ With DoBy, a TODO must have an expiration date:
 To use this library, add it as [dependency](http://search.maven.org/#search%7Cga%7C1%7Ca%3A%22doby_2.11%22).
 
 ```scala
-libraryDependencies += "de.leanovate" % "doby" % "0.0.5"
+libraryDependencies += "de.leanovate.doby" %% "doby" % "0.0.5"
 ```
 DoBy is only compatible with Scala 2.11.
 
