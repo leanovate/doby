@@ -74,12 +74,11 @@ You can also use the general expire. For info, see the [example](sample/src/test
  
 do_by (in ruby) throws an exception at runtime when a note is expired.
 
-It means that n expired note will break a running program.
+It means that an expired note will break a running program.
 
-With DoBy (in Scala), a TODO note is written by a developer and must be take care by a developer.
+With DoBy (in Scala), an expired note does not have any effect on a running program. Instead, at compile time, the compiler will warn or output an error if a note is about to expire or has expired. A TODO note is written by a developer and must be take care by a developer.
  
-That's why DoBy operates at compile time rather that at runtime.
- 
+
 
 ## Developer info
 
