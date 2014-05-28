@@ -16,16 +16,22 @@ object Expiration {
 
   def TODO(author: String, description: String, by: String): Unit = macro todo_impl
 
-  def expire_on_impl(c: Context)(on: c.Expr[String]): c.Expr[Unit] = {
+  def expire_on_impl(c: Context)(on: c.Expr[String]): c.Tree = {
+
+    import c.universe._
+
     val onValue = valueOf(c)(on)
     val expirationDate = parseToDate(onValue)
 
     expireError(c)(expirationDate, s"has expired")
 
-    c.literalUnit
+    q""
   }
 
-  def expire_on_and_warn_impl(c: Context)(on: c.Expr[String], warningDate: c.Expr[String]): c.Expr[Unit] = {
+  def expire_on_and_warn_impl(c: Context)(on: c.Expr[String], warningDate: c.Expr[String]): c.Tree = {
+
+    import c.universe._
+
     val onValue = valueOf(c)(on)
     val expirationDate = parseToDate(onValue)
 
@@ -36,10 +42,13 @@ object Expiration {
 
     expireWarning(c)(warning, s"will expired")
 
-    c.literalUnit
+    q""
   }
   
-  def todo_impl(c: Context)(author: c.Expr[String], description: c.Expr[String], by: c.Expr[String]): c.Expr[Unit] = {
+  def todo_impl(c: Context)(author: c.Expr[String], description: c.Expr[String], by: c.Expr[String]): c.Tree = {
+
+    import c.universe._
+
     val authorValue = valueOf(c)(author)
     val descriptionValue = valueOf(c)(description)
     val byValue = valueOf(c)(by)
@@ -55,7 +64,7 @@ object Expiration {
 
     expireWarning(c)(warningDate, s"TODO from '$authorValue': '$descriptionValue' will expired")
 
-    c.literalUnit
+    q""
   }
 
   private def parseToDate(s: String): Date = {
