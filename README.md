@@ -85,6 +85,11 @@ With DoBy (in Scala), an expired note does not have any effect on a running prog
 [Continuous Integration](https://travis-ci.org/leanovate/doby)
 
 
+## Alternatives
+
+- [FIXME](https://github.com/tysonjh/fixme)
+
+
 ## Credits
 - [do_by: Automatically expiring TODO notes in Ruby](https://github.com/andyw8/do_by)
 
