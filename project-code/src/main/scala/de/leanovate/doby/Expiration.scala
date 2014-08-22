@@ -24,7 +24,9 @@ object Expiration {
   def expire(on: String, warningDate: String): Unit = macro expire_on_and_warn_impl
 
   /**
-   * define a TODO note
+   * define a TODO note.
+   * A TODO note does not compile anymore when the date has expired.
+   * A TODO note emits a compiler warning 3 weeks before the expiration date.
    * @param author author of the note
    * @param description description of the node
    * @param by expiration date
