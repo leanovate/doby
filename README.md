@@ -82,7 +82,7 @@ With DoBy (in Scala), an expired note does not have any effect on a running prog
 
 ## Developer info
 
-[Continuous Integration](https://travis-ci.org/leanovate/doby)
+Travis: [![Build Status](https://travis-ci.org/leanovate/doby.png?branch=master)](https://travis-ci.org/leanovate/doby)
 
 
 ## Alternatives
