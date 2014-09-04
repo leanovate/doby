@@ -6,22 +6,27 @@ import scala.reflect.macros.blackbox.Context
 import scala.util.Try
 
 
-object Expiration {
 
-  import scala.language.experimental.macros
+import scala.language.experimental.macros
+
+object expire {
 
   /**
    * define an expiration unit
    * @param on expiration date
    */
-  def expire(on: String): Unit = macro expire_on_impl
+  def apply(on: String): Unit = macro ExpirationMacro.expire_on_impl
 
   /**
    * define an expiration unit
    * @param on expiration date
    * @param warningDate output a compilation warning after this date
    */
-  def expire(on: String, warningDate: String): Unit = macro expire_on_and_warn_impl
+  def apply(on: String, warningDate: String): Unit = macro ExpirationMacro.expire_on_and_warn_impl
+}
+
+
+object TODO {
 
   /**
    * define a TODO note.
@@ -31,7 +36,10 @@ object Expiration {
    * @param description description of the node
    * @param by expiration date
    */
-  def TODO(author: String, description: String, by: String): Unit = macro todo_impl
+  def apply(author: String, description: String, by: String): Unit = macro ExpirationMacro.todo_impl
+}
+
+object FIXME {
 
   /**
    * define a FIXME note
@@ -39,7 +47,11 @@ object Expiration {
    * @param description description of the node
    * @param by expiration date
    */
-  def FIXME(author: String, description: String, by: String): Unit = macro todo_impl
+  def apply(author: String, description: String, by: String): Unit = macro ExpirationMacro.todo_impl
+
+}
+
+object ExpirationMacro {
 
   def expire_on_impl(c: Context)(on: c.Expr[String]): c.Tree = {
 
@@ -92,7 +104,7 @@ object Expiration {
     q""
   }
 
-  private def parseToDate(s: String): Date = {
+  private[this] def parseToDate(s: String): Date = {
     Try {
       val dateFormat = new SimpleDateFormat("yyyy-MM-dd")
       dateFormat.parse(s)
@@ -102,7 +114,7 @@ object Expiration {
     }
   }
 
-  private def valueOf(c: Context)(exp: c.Expr[String]): String = {
+  private[this] def valueOf(c: Context)(exp: c.Expr[String]): String = {
     import c.universe._
 
     exp.tree match {
@@ -111,7 +123,7 @@ object Expiration {
     }
   }
 
-  private def expireError(c: Context)(expiration: Date, expirationMsg: String): Unit = {
+  private[this] def expireError(c: Context)(expiration: Date, expirationMsg: String): Unit = {
     // check if has expired
     val now = new Date()
     if (now.after(expiration)) {

@@ -52,7 +52,7 @@ DoBy is only compatible with Scala 2.11.
 ### Add an import
 
 ```scala
-import de.leanovate.doby.Expiration._
+import de.leanovate.doby._
 ```
 
 ### Write your TODO
@@ -66,6 +66,11 @@ TODO("YaSi", "do not write any TODO anymore", "2011/05/25")
 ```
 
 You can also use the general expire. For info, see the [example](sample/src/test/scala/de/leanovate/doby/ExpirationApp.scala)
+
+## Changelog
+### version 0.0.6
+
+Change the default package from `de.leanovate.doby.Expiration._` to `de.leanovate.doby._`
 
 
 ## FAQ

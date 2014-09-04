@@ -1,7 +1,5 @@
 package de.leanovate.doby
 
-import de.leanovate.doby.Expiration._
-
 class ExpirationApp extends App {
 
   expire("3001-01-01") // compile

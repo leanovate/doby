@@ -1,7 +1,6 @@
 package de.leanovate.doby
 
 import org.scalatest.FunSuite
-import de.leanovate.doby.Expiration._
 
 class ExpirationTest extends FunSuite {
   
