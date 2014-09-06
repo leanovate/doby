@@ -1,4 +1,4 @@
-import de.leanovate.doby.Expiration._
+import de.leanovate.doby._
 
 object MyApp extends App {
 
